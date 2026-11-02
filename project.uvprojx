@@ -666,16 +666,6 @@
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
-              <FileName>LED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Hardware\LED.c</FilePath>
-            </File>
-            <File>
-              <FileName>LED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\LED.h</FilePath>
-            </File>
-            <File>
               <FileName>OLED.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Hardware\OLED.c</FilePath>
@@ -689,6 +679,21 @@
               <FileName>OLED_Font.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\OLED_Font.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLEDIIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\OLEDIIC.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLEDIIC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\OLEDIIC.h</FilePath>
+            </File>
+            <File>
+              <FileName>word.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\word.h</FilePath>
             </File>
             <File>
               <FileName>PWM.c</FileName>
@@ -719,6 +724,26 @@
               <FileName>Servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\Servo.h</FilePath>
+            </File>
+            <File>
+              <FileName>HCSOR04.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\HCSOR04.c</FilePath>
+            </File>
+            <File>
+              <FileName>HCSOR04.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\HCSOR04.h</FilePath>
+            </File>
+            <File>
+              <FileName>Contorl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Contorl.c</FilePath>
+            </File>
+            <File>
+              <FileName>Control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\Control.h</FilePath>
             </File>
           </Files>
         </Group>

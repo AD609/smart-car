@@ -1,6 +1,9 @@
 #include "stm32f10x.h"                  // Device header
 #include	"PWM.h"
 
+int8_t s_speed,l_speed,r_spped;
+
+
 void Motor_Init(void)
 {
 	PWM_Init();
@@ -14,50 +17,92 @@ void Motor_Init(void)
 
 }
 
-void Motor_Speed(int8_t Speed)
+void Motor_Speed(int8_t Straight_Speed)
 {
-	if (Speed > 0)
+	if (Straight_Speed > 0)
 	{
 		GPIO_SetBits(GPIOB,GPIO_Pin_5 |GPIO_Pin_7);
 		GPIO_ResetBits(GPIOB,GPIO_Pin_6 |GPIO_Pin_8);
-		PWM_Compare_ALL(Speed);
+		PWM_Compare_ALL(Straight_Speed);
 		
 	}
-	else 
-	{
+//	else 
+//	{
+//		GPIO_SetBits(GPIOB,GPIO_Pin_6 |GPIO_Pin_8);
+//		GPIO_ResetBits(GPIOB,GPIO_Pin_5 |GPIO_Pin_7);
+//		PWM_Compare_ALL(-Straight_Speed);
+//	}
+
+}
+
+void Motor_Down_Speed(int8_t Down_Speed)
+{
 		GPIO_SetBits(GPIOB,GPIO_Pin_6 |GPIO_Pin_8);
 		GPIO_ResetBits(GPIOB,GPIO_Pin_5 |GPIO_Pin_7);
-		PWM_Compare_ALL(-Speed);
-	}
-
+		PWM_Compare_ALL(Down_Speed);
 }
 
-void Motor_L_Speed(int8_t Speed)
+
+void Motor_L_Speed(int8_t L_Speed)
 {
-	if (Speed > 0)
+	if (L_Speed > 0)
 	{
-		GPIO_ResetBits(GPIOA, GPIO_Pin_7); // PWMA (A7) 输出低电平 (0% 占空比)
-		GPIO_ResetBits(GPIOB, GPIO_Pin_5); // AIN1 (B5) 低电平
-		GPIO_ResetBits(GPIOB, GPIO_Pin_6); // AIN2 (B6) 低电平
-		
-		GPIO_SetBits(GPIOB,GPIO_Pin_7);
-		GPIO_ResetBits(GPIOB,GPIO_Pin_8);
-		PWM_Compare_ALL(Speed);
+		GPIO_SetBits(GPIOB, GPIO_Pin_5);
+		GPIO_ResetBits(GPIOB, GPIO_Pin_6);
+		PWM_Compare2_R(L_Speed);
+	}
+	else if (L_Speed < 0)
+	{
+		GPIO_SetBits(GPIOB, GPIO_Pin_6);
+		GPIO_ResetBits(GPIOB, GPIO_Pin_5);
+		PWM_Compare2_R((-L_Speed));
+	}
+	else
+	{
+		GPIO_SetBits(GPIOB, GPIO_Pin_5 | GPIO_Pin_6);
+		PWM_Compare2_R(0);
+	}
+}
 
-	}
-}
-	 
-void Motor_R_Speed(int8_t Speed)
+void Motor_R_Speed(int8_t R_Speed)
 {
-	if (Speed > 0)
+	if (R_Speed > 0)
 	{
-		GPIO_ResetBits(GPIOA, GPIO_Pin_6); // PWMB (A6) 输出低电平 (0% 占空比)
-		GPIO_ResetBits(GPIOB, GPIO_Pin_7); // AIN1 (B7) 低电平
-		GPIO_ResetBits(GPIOB, GPIO_Pin_8); // AIN2 (B8) 低电平
-		
-		
-		GPIO_SetBits(GPIOB,GPIO_Pin_5 );
-		GPIO_ResetBits(GPIOB,GPIO_Pin_6);
-		PWM_Compare_ALL(Speed);
+		GPIO_SetBits(GPIOB, GPIO_Pin_7);
+		GPIO_ResetBits(GPIOB, GPIO_Pin_8);
+		PWM_Compare1_L(R_Speed);
+	}
+	else if (R_Speed < 0)
+	{
+		GPIO_SetBits(GPIOB, GPIO_Pin_8);
+		GPIO_ResetBits(GPIOB, GPIO_Pin_7);
+		PWM_Compare1_L(-R_Speed);
+	}
+	else
+	{
+		GPIO_SetBits(GPIOB, GPIO_Pin_7 | GPIO_Pin_8);
+		PWM_Compare1_L(0);
 	}
 }
+
+void Motor_Differential(int16_t left, int16_t right)
+{
+		Motor_L_Speed(left);
+		Motor_R_Speed(right);
+}
+
+
+void Motor_Stop(int8_t Speed)
+{
+		
+		PWM_Compare_ALL(0);
+}
+
+
+
+
+
+
+
+
+

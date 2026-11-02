@@ -25,3 +25,5 @@ JLinkLog.txt
 Thumbs.db
 desktop.ini
 .DS_Store
+build_log.txt
+flash_log.txt
