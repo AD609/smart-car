@@ -736,14 +736,34 @@
               <FilePath>.\Hardware\HCSOR04.h</FilePath>
             </File>
             <File>
-              <FileName>Contorl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Hardware\Contorl.c</FilePath>
-            </File>
-            <File>
               <FileName>Control.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\Control.h</FilePath>
+            </File>
+            <File>
+              <FileName>Control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Control.c</FilePath>
+            </File>
+            <File>
+              <FileName>TCRT5000.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\TCRT5000.c</FilePath>
+            </File>
+            <File>
+              <FileName>TCRT5000.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\TCRT5000.h</FilePath>
+            </File>
+            <File>
+              <FileName>follow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\follow.c</FilePath>
+            </File>
+            <File>
+              <FileName>Follow.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\Follow.h</FilePath>
             </File>
           </Files>
         </Group>

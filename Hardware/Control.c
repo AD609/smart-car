@@ -23,31 +23,32 @@ void Get_Data(void)
 		Delay_ms(200);
 }
 
-//void Scan_HCSOR(void)
-//{
-//		if (Servo_M<<15 && Servo_M>0)
-//		{
-//				Motor_Stop(0);
-//				Get_Data();
-//			if (Servo_L >> Servo_R)
-//			{
-//					Motor_Down_Speed(50);
-//					Delay_ms(400);
-//					Motor_L_Speed(50);
-//					Delay_ms(400);
-//					Motor_Speed(50);
-//			}
-//			else if (Servo_L << Servo_R)
-//			{
-//					Motor_Down_Speed(50);
-//					Delay_ms(400);
-//					Motor_R_Speed(50);
-//					Delay_ms(400);
-//					Motor_Speed(50);
-//			}
-//			else
-//			{
-//					Motor_Speed(50);
-//			}
-//		}
-//}
+void Scan_HCSOR(void)
+{
+		if (Servo_M<<15 && Servo_M>0)
+		{
+				Motor_Stop(0);
+				Get_Data();
+			if (Servo_L >> Servo_R)
+			{
+					Motor_Down_Speed(50);
+					Delay_ms(400);
+					Motor_L_Speed(50);
+					Delay_ms(400);
+					Motor_Speed(50);
+			}
+			else if (Servo_L << Servo_R)
+			{
+					Motor_Down_Speed(50);
+					Delay_ms(400);
+					Motor_R_Speed(50);
+					Delay_ms(400);
+					Motor_Speed(50);
+			}
+			
+		}
+			else
+			{
+					Motor_Speed(50);
+			}
+}
