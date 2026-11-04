@@ -5,3 +5,7 @@ DebugConfig/
 *.uvoptx
 Hardware/backup/
 智能小车资料/
+
+_backup_*/
+*.log
+*.bak

@@ -1,3 +1,0 @@
-Load "C:\\Users\\2\\Desktop\\stm32project\\ÖÇÄÜÐ¡³µ\\Objects\\project.axf" 
-Error: Flash Download failed  -  Target DLL has been cancelled
-Flash Load finished at 18:27:34
