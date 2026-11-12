@@ -756,9 +756,9 @@
               <FilePath>.\Hardware\TCRT5000.h</FilePath>
             </File>
             <File>
-              <FileName>follow.c</FileName>
+              <FileName>Follow.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Hardware\follow.c</FilePath>
+              <FilePath>.\Hardware\Follow.c</FilePath>
             </File>
             <File>
               <FileName>Follow.h</FileName>
